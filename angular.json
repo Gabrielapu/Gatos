@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gatos"
+    }
+  },
+  "defaultProject": "gatos",
+  "cli": {
+    "analytics": false
+  }
 }
