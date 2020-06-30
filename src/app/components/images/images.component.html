@@ -2,27 +2,38 @@
   <div class="row">
     <div class="col mt-3">
       <h3>Sube un lindo gatito!</h3>
-      <input
-        #imageInput
-        type="file"
-        accept=".jpg, .png"
-      />
-      <hr />
-      <progressbar class="progress-striped active"  [value]="total" type="success"><i>{{loaded}} / {{total}}</i></progressbar>
-      <hr>
-      <button class="btn btn-success" (click)="onClick(imageInput)">
+      <input class="mt-2" #imageInput type="file" accept=".jpg, .png" />
+      <button class="btn btn-success mb-2 mx-2" (click)="onClick(imageInput)">
         Subir al gatuno
       </button>
     </div>
   </div>
-  <hr />
   <div class="row">
     <div class="col">
-      <h3>Imagenes subidas</h3>
-      <div class="card" style="width: 18rem;" *ngFor="let image of images" >
-        <img [src]="image.url" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">{{image.created_at | date}}</p>
+      <progressbar
+        class="progress-striped active mt-3"
+        [value]="total"
+        type="success"
+        ><i>{{ loaded }} / {{ total }}</i></progressbar
+      >
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3>Imagenes subidas</h3>
+        <div class="card-columns">
+          <div
+          class="card my-4"
+          style="width: 18rem;"
+          *ngFor="let image of images"
+        >
+          <img [src]="image.url" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <p class="card-text">{{ image.created_at | date }}</p>
+          </div>
+        </div>
         </div>
       </div>
     </div>
