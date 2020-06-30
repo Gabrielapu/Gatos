@@ -1,1 +1,26 @@
-<p>breeds works!</p>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Origen</th>
+        <th scope="col">Wikipedia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let breed of breeds">
+        <td>{{ breed.name }}</td>
+        <td>{{ breed.origin }}</td>
+        <td>{{ breed.wikipedia_url}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination
+  
+    [totalItems]="57"
+    (pageChanged)="getRecords($event)"
+    previousText="Anterior"
+    nextText="Siguiente"
+  ></pagination>
+  
+</div>

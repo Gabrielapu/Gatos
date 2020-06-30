@@ -1,0 +1,29 @@
+<!-- <div class="container">
+  <div class="row row-cols-1 row-cols-md-2">
+    <div class="col-md-12 mb-4 text-center">
+      <div class="card my-4" *ngFor="let favourite of favourites">
+        <img [src]="favourite.image.url" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Creado el:</h5>
+          <p class="card-text">{{ favourite.created_at | date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 py-2" *ngFor="let favourite of favourites">
+      <div class="card bg-dark text-white">
+        <img [src]="favourite.image.url" width="100px" height="200px" class="card-img" alt="..." style="filter: brightness(50%);">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Creado el: {{favourite.created_at | date}}</h5>
+      
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>
+

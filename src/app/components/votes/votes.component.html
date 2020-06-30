@@ -1,0 +1,16 @@
+<div class="container d-flex justify-content-center mt-5">
+  <div class="card" style="width: 18rem;">
+    <img [src]="cat?.url" class="card-img-top" alt="..." />
+    <div class="card-body text-center">
+
+      <p class="card-text">
+       ¿Te gusta este gato?
+      </p>
+          <button class="btn btn-success mr-3" (click)="vote('like')">Me gusta</button>
+          <button class="btn btn-danger" (click)="vote('dislike')">No me gusta</button>
+          <hr>  
+          <button class="btn btn-outline-primary" (click)="favourite()"> Guardar como favorito </button>
+    </div>
+  </div>
+</div>
+

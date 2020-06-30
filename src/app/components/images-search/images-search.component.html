@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10">
+      <ng-select
+        [formControl]="searchForm"
+        [items]="categories"
+        bindLabel="name"
+        autofocus
+        bindValue="id"
+      >
+      </ng-select>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-outline-primary" type="submit" (click)="onClick()">Filtrar</button>
+    </div>
+    <div class="row">
+      <div class="col-md-12 my-4">
+        <div class="card-columns">
+          <div class="card" style="width: 18rem;" *ngFor="let image of images">
+            <img [src]="image.url" class="card-img-top" alt="..." />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination
+  
+    [totalItems]="100"
+    (pageChanged)="onClick()"
+    previousText="Anterior"
+    nextText="Siguiente"
+  ></pagination>
+</div>
